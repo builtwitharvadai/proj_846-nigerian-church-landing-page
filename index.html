@@ -26,8 +26,12 @@
   <meta name="theme-color" content="#1a472a" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0d2415" media="(prefers-color-scheme: dark)">
   
+  <link rel="dns-prefetch" href="https://images.unsplash.com">
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+  
   <link rel="preload" href="styles/main.css" as="style">
   <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/accessibility.css">
   
   <script type="application/ld+json">
   {
@@ -116,8 +120,8 @@
         <p class="hero-description">Join us as we gather to worship God, grow in faith, and serve our community with love and compassion. Experience the warmth of Nigerian Christian fellowship in a Spirit-filled environment.</p>
         
         <div class="hero-actions">
-          <a href="#services" class="btn btn-primary">Service Times</a>
-          <a href="#contact" class="btn btn-secondary">Visit Us</a>
+          <a href="#services" class="btn btn-primary" aria-label="View our service times and schedule">Service Times</a>
+          <a href="#contact" class="btn btn-secondary" aria-label="Get directions and contact information">Visit Us</a>
         </div>
         
         <div class="hero-highlights">
@@ -146,7 +150,7 @@
                     https://images.unsplash.com/photo-1438232992991-995b7058bbb3?w=1920&h=1280&fit=crop&q=85 1920w"
             sizes="100vw"
             type="image/jpeg">
-          <img src="https://images.unsplash.com/photo-1438232992991-995b7058bbb3?w=1920&h=1280&fit=crop&q=85" alt="Diverse congregation worshipping together in modern Nigerian church with raised hands" loading="eager" width="1920" height="1280">
+          <img src="https://images.unsplash.com/photo-1438232992991-995b7058bbb3?w=1920&h=1280&fit=crop&q=85" alt="Diverse congregation worshipping together in modern Nigerian church with raised hands" loading="eager" fetchpriority="high" width="1920" height="1280">
         </picture>
       </div>
     </section>
@@ -179,8 +183,8 @@
             <p class="card-text">Living Faith Christian Center was birthed from a divine vision in 1985 when Pastor John Adeyemi and fifteen faithful believers gathered in a small living room in Surulere, Lagos. What began as a humble prayer meeting has grown into a thriving congregation of over 2,000 members, touching lives across Lagos State and beyond. Through God's grace and faithful service, we have witnessed miraculous healings, financial breakthroughs, and countless testimonies of transformed lives.</p>
             
             <details class="history-timeline">
-              <summary>View Our Timeline</summary>
-              <ul role="list" class="timeline-list">
+              <summary aria-label="Expand to view church history timeline">View Our Timeline</summary>
+              <ul role="list" class="timeline-list" aria-label="Church history timeline">
                 <li class="timeline-item">
                   <time datetime="1985">1985</time>
                   <span>Church founded with 15 members meeting in a living room</span>
@@ -227,7 +231,7 @@
                       https://images.unsplash.com/photo-1464207687429-7505649dae38?w=800&h=533&fit=crop&q=85 800w"
               sizes="(max-width: 768px) 100vw, 800px"
               type="image/jpeg">
-            <img src="https://images.unsplash.com/photo-1464207687429-7505649dae38?w=800&h=533&fit=crop&q=85" alt="Modern church building exterior with cross and welcoming entrance" loading="lazy" width="800" height="533">
+            <img src="https://images.unsplash.com/photo-1464207687429-7505649dae38?w=800&h=533&fit=crop&q=85" alt="Modern church building exterior with cross and welcoming entrance" loading="lazy" decoding="async" width="800" height="533">
           </picture>
         </div>
       </div>
@@ -241,7 +245,7 @@
         </header>
         
         <div class="services-grid grid">
-          <article class="service-card card">
+          <article class="service-card card" aria-label="Sunday worship service details">
             <h3 class="card-title">Sunday Worship Service</h3>
             <div class="service-details">
               <p class="service-time">
@@ -257,7 +261,7 @@
             </div>
           </article>
           
-          <article class="service-card card">
+          <article class="service-card card" aria-label="Wednesday Bible study details">
             <h3 class="card-title">Midweek Bible Study</h3>
             <div class="service-details">
               <p class="service-time">
@@ -273,7 +277,7 @@
             </div>
           </article>
           
-          <article class="service-card card">
+          <article class="service-card card" aria-label="Friday night prayer meeting details">
             <h3 class="card-title">Friday Night Prayer</h3>
             <div class="service-details">
               <p class="service-time">
@@ -289,7 +293,7 @@
             </div>
           </article>
           
-          <article class="service-card card">
+          <article class="service-card card" aria-label="Saturday youth service details">
             <h3 class="card-title">Youth Service</h3>
             <div class="service-details">
               <p class="service-time">
@@ -316,37 +320,37 @@
         </header>
         
         <div class="ministries-grid grid">
-          <article class="ministry-card card">
+          <article class="ministry-card card" aria-label="Children's ministry information">
             <div class="ministry-icon" aria-hidden="true">👨‍👩‍👧‍👦</div>
             <h3 class="card-title">Children's Ministry</h3>
             <p class="card-text">Nurturing the next generation with age-appropriate Bible teaching, fun activities, and character development.</p>
           </article>
           
-          <article class="ministry-card card">
+          <article class="ministry-card card" aria-label="Worship ministry information">
             <div class="ministry-icon" aria-hidden="true">🎵</div>
             <h3 class="card-title">Worship Ministry</h3>
             <p class="card-text">Leading the congregation in spirit-filled worship through music, dance, and creative arts.</p>
           </article>
           
-          <article class="ministry-card card">
+          <article class="ministry-card card" aria-label="Outreach ministry information">
             <div class="ministry-icon" aria-hidden="true">🤝</div>
             <h3 class="card-title">Outreach Ministry</h3>
             <p class="card-text">Serving our community through evangelism, charity work, and social impact programs.</p>
           </article>
           
-          <article class="ministry-card card">
+          <article class="ministry-card card" aria-label="Marriage ministry information">
             <div class="ministry-icon" aria-hidden="true">💑</div>
             <h3 class="card-title">Marriage Ministry</h3>
             <p class="card-text">Supporting couples with pre-marital counseling, marriage enrichment, and family life education.</p>
           </article>
           
-          <article class="ministry-card card">
+          <article class="ministry-card card" aria-label="Media ministry information">
             <div class="ministry-icon" aria-hidden="true">📖</div>
             <h3 class="card-title">Media Ministry</h3>
             <p class="card-text">Broadcasting services online, managing social media, and producing inspirational content.</p>
           </article>
           
-          <article class="ministry-card card">
+          <article class="ministry-card card" aria-label="Prayer ministry information">
             <div class="ministry-icon" aria-hidden="true">🙏</div>
             <h3 class="card-title">Prayer Ministry</h3>
             <p class="card-text">Interceding for the church, nation, and individual needs through organized prayer initiatives.</p>
@@ -363,7 +367,7 @@
         </header>
         
         <div class="events-list">
-          <article class="event-card card">
+          <article class="event-card card" aria-label="Annual Thanksgiving Service on February 15th">
             <time datetime="2024-02-15" class="event-date">
               <span class="event-day">15</span>
               <span class="event-month">Feb</span>
@@ -375,7 +379,7 @@
             </div>
           </article>
           
-          <article class="event-card card">
+          <article class="event-card card" aria-label="Youth Conference 2024 from March 1st to 3rd">
             <time datetime="2024-03-01" class="event-date">
               <span class="event-day">01</span>
               <span class="event-month">Mar</span>
@@ -387,7 +391,7 @@
             </div>
           </article>
           
-          <article class="event-card card">
+          <article class="event-card card" aria-label="Marriage Seminar on March 20th">
             <time datetime="2024-03-20" class="event-date">
               <span class="event-day">20</span>
               <span class="event-month">Mar</span>
@@ -411,7 +415,7 @@
         
         <div class="contact-content">
           <div class="contact-info">
-            <article class="contact-item card">
+            <article class="contact-item card" aria-label="Church location and address">
               <h3 class="card-title">Location</h3>
               <address>
                 123 Church Street, Surulere<br>
@@ -420,26 +424,26 @@
               </address>
             </article>
             
-            <article class="contact-item card">
+            <article class="contact-item card" aria-label="Contact phone numbers">
               <h3 class="card-title">Phone</h3>
-              <p><a href="tel:+2348012345678">+234 801 234 5678</a></p>
-              <p><a href="https://wa.me/2348012345678">+234 801 234 5678</a> (WhatsApp)</p>
+              <p><a href="tel:+2348012345678" aria-label="Call church office at +234 801 234 5678">+234 801 234 5678</a></p>
+              <p><a href="https://wa.me/2348012345678" aria-label="Message us on WhatsApp at +234 801 234 5678">+234 801 234 5678 (WhatsApp)</a></p>
             </article>
             
-            <article class="contact-item card">
+            <article class="contact-item card" aria-label="Contact email addresses">
               <h3 class="card-title">Email</h3>
-              <p><a href="mailto:info@livingfaithcc.ng">info@livingfaithcc.ng</a></p>
-              <p><a href="mailto:pastor@livingfaithcc.ng">pastor@livingfaithcc.ng</a></p>
+              <p><a href="mailto:info@livingfaithcc.ng" aria-label="Email general inquiries to info@livingfaithcc.ng">info@livingfaithcc.ng</a></p>
+              <p><a href="mailto:pastor@livingfaithcc.ng" aria-label="Email pastoral team at pastor@livingfaithcc.ng">pastor@livingfaithcc.ng</a></p>
             </article>
             
-            <article class="contact-item card">
+            <article class="contact-item card" aria-label="Church office hours">
               <h3 class="card-title">Office Hours</h3>
               <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
               <p>Saturday: 10:00 AM - 2:00 PM</p>
               <p>Sunday: Closed (Service Days)</p>
             </article>
             
-            <article class="contact-item card">
+            <article class="contact-item card" aria-label="Social media links">
               <h3 class="card-title">Follow Us</h3>
               <ul role="list" class="social-links">
                 <li><a href="https://www.facebook.com/livingfaithcc" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page">Facebook</a></li>
@@ -451,7 +455,7 @@
           </div>
           
           <div class="contact-form-wrapper">
-            <form method="POST" action="https://formspree.io/f/YOUR_FORM_ID" class="contact-form" novalidate data-contact-form>
+            <form method="POST" action="https://formspree.io/f/YOUR_FORM_ID" class="contact-form" novalidate data-contact-form aria-label="Contact form">
               <fieldset>
                 <legend>Send Us a Message</legend>
                 
@@ -580,6 +584,7 @@
                     class="btn btn-primary"
                     aria-busy="false"
                     aria-live="polite"
+                    aria-label="Submit contact form"
                     data-submit-button
                   >
                     <span class="button-text">Send Message</span>
@@ -588,6 +593,7 @@
                   <button 
                     type="reset" 
                     class="btn btn-secondary"
+                    aria-label="Clear all form fields"
                   >
                     Clear Form
                   </button>
@@ -601,9 +607,9 @@
         
         <div class="map-container">
           <h3>Find Us on the Map</h3>
-          <div class="map-placeholder">
+          <div class="map-placeholder" aria-label="Interactive map showing church location">
             <p>Interactive map will be embedded here</p>
-            <p><a href="https://maps.google.com/?q=6.5244,3.3792" target="_blank" rel="noopener noreferrer">Open in Google Maps</a></p>
+            <p><a href="https://maps.google.com/?q=6.5244,3.3792" target="_blank" rel="noopener noreferrer" aria-label="Open church location in Google Maps">Open in Google Maps</a></p>
           </div>
         </div>
       </div>
@@ -622,11 +628,11 @@
           <h3>Quick Links</h3>
           <nav aria-label="Footer navigation">
             <ul role="list">
-              <li><a href="#about">About Us</a></li>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#ministries">Ministries</a></li>
-              <li><a href="#events">Events</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><a href="#about" aria-label="Learn more about our church">About Us</a></li>
+              <li><a href="#services" aria-label="View our service times">Services</a></li>
+              <li><a href="#ministries" aria-label="Explore our ministries">Ministries</a></li>
+              <li><a href="#events" aria-label="See upcoming events">Events</a></li>
+              <li><a href="#contact" aria-label="Contact us">Contact</a></li>
             </ul>
           </nav>
         </div>
@@ -657,9 +663,9 @@
         <p>&copy; 2024 Living Faith Christian Center. All rights reserved.</p>
         <nav aria-label="Legal navigation">
           <ul role="list">
-            <li><a href="/privacy-policy">Privacy Policy</a></li>
-            <li><a href="/terms-of-service">Terms of Service</a></li>
-            <li><a href="/sitemap">Sitemap</a></li>
+            <li><a href="/privacy-policy" aria-label="Read our privacy policy">Privacy Policy</a></li>
+            <li><a href="/terms-of-service" aria-label="Read our terms of service">Terms of Service</a></li>
+            <li><a href="/sitemap" aria-label="View site map">Sitemap</a></li>
           </ul>
         </nav>
       </div>
