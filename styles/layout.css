@@ -1,0 +1,745 @@
+/**
+ * Layout System - CSS Grid and Flexbox
+ * Mobile-first responsive layouts for Nigerian Church Landing Page
+ * Viewport range: 320px to 1920px
+ */
+
+/* ============================================
+   BASE LAYOUT RESET & BOX-SIZING
+   ============================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================================
+   CONTAINER SYSTEM - Fluid & Responsive
+   ============================================ */
+
+.container {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: var(--space-4);
+}
+
+@media (width >= 640px) {
+  .container {
+    max-width: var(--container-sm);
+    padding-inline: var(--space-6);
+  }
+}
+
+@media (width >= 768px) {
+  .container {
+    max-width: var(--container-md);
+  }
+}
+
+@media (width >= 1024px) {
+  .container {
+    max-width: var(--container-lg);
+    padding-inline: var(--space-8);
+  }
+}
+
+@media (width >= 1280px) {
+  .container {
+    max-width: var(--container-xl);
+  }
+}
+
+@media (width >= 1536px) {
+  .container {
+    max-width: var(--container-2xl);
+  }
+}
+
+/* Full-width container variant */
+.container-fluid {
+  width: 100%;
+  padding-inline: var(--space-4);
+}
+
+@media (width >= 640px) {
+  .container-fluid {
+    padding-inline: var(--space-6);
+  }
+}
+
+@media (width >= 1024px) {
+  .container-fluid {
+    padding-inline: var(--space-8);
+  }
+}
+
+/* ============================================
+   CSS GRID LAYOUT SYSTEM
+   ============================================ */
+
+/* Main page grid structure */
+.grid {
+  display: grid;
+  gap: var(--space-4);
+}
+
+/* Responsive grid columns - Mobile-first */
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+@media (width >= 640px) {
+  .grid-cols-sm-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .grid-cols-sm-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (width >= 768px) {
+  .grid-cols-md-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .grid-cols-md-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .grid-cols-md-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (width >= 1024px) {
+  .grid-cols-lg-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .grid-cols-lg-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .grid-cols-lg-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .grid-cols-lg-6 {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+/* Auto-fit grid for responsive cards */
+.grid-auto-fit {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  gap: var(--space-6);
+}
+
+@media (width >= 640px) {
+  .grid-auto-fit {
+    grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+  }
+}
+
+/* Auto-fill grid for consistent sizing */
+.grid-auto-fill {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
+  gap: var(--space-6);
+}
+
+/* Grid gap utilities */
+.gap-2 {
+  gap: var(--space-2);
+}
+
+.gap-3 {
+  gap: var(--space-3);
+}
+
+.gap-4 {
+  gap: var(--space-4);
+}
+
+.gap-6 {
+  gap: var(--space-6);
+}
+
+.gap-8 {
+  gap: var(--space-8);
+}
+
+/* Column and row gap utilities */
+.gap-x-4 {
+  column-gap: var(--space-4);
+}
+
+.gap-y-4 {
+  row-gap: var(--space-4);
+}
+
+.gap-x-6 {
+  column-gap: var(--space-6);
+}
+
+.gap-y-6 {
+  row-gap: var(--space-6);
+}
+
+/* Grid column span utilities */
+.col-span-full {
+  grid-column: 1 / -1;
+}
+
+.col-span-2 {
+  grid-column: span 2 / span 2;
+}
+
+.col-span-3 {
+  grid-column: span 3 / span 3;
+}
+
+@media (width >= 768px) {
+  .col-span-md-2 {
+    grid-column: span 2 / span 2;
+  }
+
+  .col-span-md-3 {
+    grid-column: span 3 / span 3;
+  }
+}
+
+/* ============================================
+   FLEXBOX LAYOUT SYSTEM
+   ============================================ */
+
+/* Flex container utilities */
+.flex {
+  display: flex;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+/* Flex direction */
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.flex-col-reverse {
+  flex-direction: column-reverse;
+}
+
+@media (width >= 768px) {
+  .flex-md-row {
+    flex-direction: row;
+  }
+
+  .flex-md-col {
+    flex-direction: column;
+  }
+}
+
+/* Flex wrap */
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+/* Justify content */
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+/* Align items */
+.items-start {
+  align-items: flex-start;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-baseline {
+  align-items: baseline;
+}
+
+.items-stretch {
+  align-items: stretch;
+}
+
+/* Align self */
+.self-start {
+  align-self: flex-start;
+}
+
+.self-end {
+  align-self: flex-end;
+}
+
+.self-center {
+  align-self: center;
+}
+
+.self-stretch {
+  align-self: stretch;
+}
+
+/* Flex grow and shrink */
+.flex-1 {
+  flex: 1 1 0%;
+}
+
+.flex-auto {
+  flex: 1 1 auto;
+}
+
+.flex-none {
+  flex: none;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.flex-shrink {
+  flex-shrink: 1;
+}
+
+.flex-shrink-0 {
+  flex-shrink: 0;
+}
+
+/* ============================================
+   SECTION LAYOUTS
+   ============================================ */
+
+/* Main page sections */
+.section {
+  padding-block: var(--space-12);
+}
+
+@media (width >= 768px) {
+  .section {
+    padding-block: var(--space-16);
+  }
+}
+
+@media (width >= 1024px) {
+  .section {
+    padding-block: var(--space-20);
+  }
+}
+
+/* Section variants */
+.section-sm {
+  padding-block: var(--space-8);
+}
+
+@media (width >= 768px) {
+  .section-sm {
+    padding-block: var(--space-10);
+  }
+}
+
+.section-lg {
+  padding-block: var(--space-16);
+}
+
+@media (width >= 768px) {
+  .section-lg {
+    padding-block: var(--space-20);
+  }
+}
+
+@media (width >= 1024px) {
+  .section-lg {
+    padding-block: var(--space-24);
+  }
+}
+
+/* ============================================
+   HEADER & NAVIGATION LAYOUT
+   ============================================ */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-index-sticky);
+  background-color: var(--color-background);
+  border-block-end: 1px solid var(--color-border-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: var(--space-4);
+  gap: var(--space-4);
+}
+
+@media (width >= 768px) {
+  .nav {
+    padding-block: var(--space-5);
+  }
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (width >= 768px) {
+  .nav-list {
+    flex-direction: row;
+    gap: var(--space-6);
+  }
+}
+
+/* ============================================
+   HERO SECTION LAYOUT
+   ============================================ */
+
+.hero {
+  display: grid;
+  min-height: calc(100vh - 80px);
+  min-height: calc(100dvh - 80px);
+  place-items: center;
+  padding-block: var(--space-12);
+}
+
+@media (width >= 768px) {
+  .hero {
+    padding-block: var(--space-16);
+  }
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  text-align: center;
+  max-width: 48rem;
+}
+
+@media (width >= 768px) {
+  .hero-content {
+    gap: var(--space-8);
+  }
+}
+
+/* ============================================
+   CARD LAYOUTS
+   ============================================ */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-base);
+  overflow: hidden;
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card:hover {
+    transform: none;
+  }
+}
+
+.card-horizontal {
+  flex-direction: column;
+}
+
+@media (width >= 640px) {
+  .card-horizontal {
+    flex-direction: row;
+  }
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-6);
+  flex: 1;
+}
+
+.card-header {
+  padding: var(--space-6);
+  padding-block-end: 0;
+}
+
+.card-footer {
+  padding: var(--space-6);
+  padding-block-start: 0;
+  margin-block-start: auto;
+}
+
+/* ============================================
+   FOOTER LAYOUT
+   ============================================ */
+
+.footer {
+  margin-block-start: auto;
+  background-color: var(--color-surface-elevated);
+  border-block-start: 1px solid var(--color-border-light);
+}
+
+.footer-content {
+  display: grid;
+  gap: var(--space-8);
+  padding-block: var(--space-12);
+}
+
+@media (width >= 640px) {
+  .footer-content {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (width >= 768px) {
+  .footer-content {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (width >= 1024px) {
+  .footer-content {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.footer-bottom {
+  padding-block: var(--space-6);
+  border-block-start: 1px solid var(--color-border-light);
+  text-align: center;
+}
+
+/* ============================================
+   UTILITY LAYOUTS
+   ============================================ */
+
+/* Stack layout with consistent spacing */
+.stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.stack > * + * {
+  margin-block-start: var(--space-4);
+}
+
+.stack-sm > * + * {
+  margin-block-start: var(--space-2);
+}
+
+.stack-lg > * + * {
+  margin-block-start: var(--space-6);
+}
+
+/* Cluster layout for inline elements */
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+/* Center layout */
+.center {
+  display: grid;
+  place-items: center;
+}
+
+/* Sidebar layout */
+.sidebar-layout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+@media (width >= 1024px) {
+  .sidebar-layout {
+    flex-direction: row;
+  }
+
+  .sidebar-layout > :first-child {
+    flex-basis: 20rem;
+    flex-shrink: 0;
+  }
+
+  .sidebar-layout > :last-child {
+    flex-grow: 1;
+  }
+}
+
+/* ============================================
+   ASPECT RATIO UTILITIES
+   ============================================ */
+
+.aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
+.aspect-4-3 {
+  aspect-ratio: 4 / 3;
+}
+
+/* ============================================
+   POSITION UTILITIES
+   ============================================ */
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.sticky {
+  position: sticky;
+}
+
+/* ============================================
+   OVERFLOW UTILITIES
+   ============================================ */
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.overflow-auto {
+  overflow: auto;
+}
+
+.overflow-x-auto {
+  overflow-x: auto;
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
+}
+
+/* ============================================
+   VISIBILITY UTILITIES
+   ============================================ */
+
+.hidden {
+  display: none;
+}
+
+@media (width >= 640px) {
+  .hidden-sm {
+    display: none;
+  }
+}
+
+@media (width >= 768px) {
+  .hidden-md {
+    display: none;
+  }
+}
+
+@media (width >= 1024px) {
+  .hidden-lg {
+    display: none;
+  }
+}
+
+/* Show utilities */
+@media (width < 640px) {
+  .show-sm-only {
+    display: none;
+  }
+}
+
+@media (width < 768px) {
+  .show-md-only {
+    display: none;
+  }
+}
+
+@media (width < 1024px) {
+  .show-lg-only {
+    display: none;
+  }
+}
