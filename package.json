@@ -8,9 +8,10 @@
     "validate": "html-validate index.html",
     "lint": "htmlhint index.html",
     "lint:css": "stylelint 'styles/**/*.css'",
+    "lint:js": "eslint 'js/**/*.js'",
     "validate:css": "css-validator styles/main.css",
     "optimize:css": "cleancss -o styles/main.min.css styles/main.css",
-    "test": "npm run validate && npm run lint && npm run lint:css",
+    "test": "npm run validate && npm run lint && npm run lint:css && npm run lint:js",
     "start": "python -m http.server 8000",
     "serve": "python -m http.server 8000"
   },
@@ -27,6 +28,7 @@
   "devDependencies": {
     "clean-css-cli": "^5.6.3",
     "css-validator": "^3.0.0",
+    "eslint": "^8.57.0",
     "html-validate": "^8.0.0",
     "htmlhint": "^1.1.4",
     "stylelint": "^16.1.0",

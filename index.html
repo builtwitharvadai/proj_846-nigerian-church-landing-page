@@ -75,7 +75,13 @@
   }
   </script>
 </head>
-<body>
+<body class="no-js">
+  <noscript>
+    <div class="noscript-warning" role="alert">
+      <p>For the best experience, please enable JavaScript in your browser. All features will still work without JavaScript, but some interactions may be limited.</p>
+    </div>
+  </noscript>
+  
   <a href="#main" class="skip-link">Skip to main content</a>
   
   <header role="banner" class="header">
@@ -445,7 +451,7 @@
           </div>
           
           <div class="contact-form-wrapper">
-            <form method="POST" action="/submit-contact" class="contact-form" novalidate>
+            <form method="POST" action="https://formspree.io/f/YOUR_FORM_ID" class="contact-form" novalidate data-contact-form>
               <fieldset>
                 <legend>Send Us a Message</legend>
                 
@@ -467,6 +473,7 @@
                     maxlength="100"
                     pattern="[A-Za-z\s]+"
                     title="Please enter your full name"
+                    data-validate="name"
                   >
                   <span id="name-error" class="error-message" role="alert" aria-live="polite"></span>
                 </div>
@@ -486,6 +493,7 @@
                     aria-describedby="email-error"
                     autocomplete="email"
                     inputmode="email"
+                    data-validate="email"
                   >
                   <span id="email-error" class="error-message" role="alert" aria-live="polite"></span>
                 </div>
@@ -503,6 +511,7 @@
                     inputmode="tel"
                     pattern="[0-9+\-\s()]+"
                     title="Please enter a valid phone number"
+                    data-validate="phone"
                   >
                   <span id="phone-hint" class="form-hint">Optional - Include country code</span>
                 </div>
@@ -519,6 +528,7 @@
                     aria-required="true"
                     aria-invalid="false"
                     aria-describedby="subject-error"
+                    data-validate="subject"
                   >
                     <option value="">Select a subject</option>
                     <option value="general">General Inquiry</option>
@@ -546,6 +556,7 @@
                     aria-describedby="message-error message-hint"
                     minlength="10"
                     maxlength="1000"
+                    data-validate="message"
                   ></textarea>
                   <span id="message-hint" class="form-hint">Minimum 10 characters</span>
                   <span id="message-error" class="error-message" role="alert" aria-live="polite"></span>
@@ -569,8 +580,10 @@
                     class="btn btn-primary"
                     aria-busy="false"
                     aria-live="polite"
+                    data-submit-button
                   >
                     <span class="button-text">Send Message</span>
+                    <span class="button-spinner" aria-hidden="true"></span>
                   </button>
                   <button 
                     type="reset" 
@@ -582,7 +595,7 @@
               </fieldset>
             </form>
             
-            <div role="status" aria-live="polite" aria-atomic="true" class="form-status"></div>
+            <div role="status" aria-live="polite" aria-atomic="true" class="form-status" data-form-status></div>
           </div>
         </div>
         
@@ -652,5 +665,7 @@
       </div>
     </div>
   </footer>
+  
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>
