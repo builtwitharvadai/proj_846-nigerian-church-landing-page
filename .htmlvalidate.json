@@ -1,0 +1,93 @@
+{
+  "extends": ["html-validate:recommended"],
+  "elements": [
+    "html5"
+  ],
+  "rules": {
+    "attr-quotes": ["error", {
+      "style": "double",
+      "unquoted": false
+    }],
+    "doctype-html": "error",
+    "heading-level": "error",
+    "no-dup-attr": "error",
+    "no-dup-id": "error",
+    "no-inline-style": "off",
+    "no-missing-references": "error",
+    "no-raw-characters": ["error", {
+      "relaxed": false
+    }],
+    "no-trailing-whitespace": "error",
+    "require-sri": "off",
+    "void-style": ["error", {
+      "style": "omit"
+    }],
+    "wcag/h30": "error",
+    "wcag/h32": "error",
+    "wcag/h36": "error",
+    "wcag/h37": "error",
+    "wcag/h63": "error",
+    "wcag/h67": "error",
+    "wcag/h71": "error",
+    "element-required-attributes": "error",
+    "element-permitted-content": "error",
+    "element-permitted-occurrences": "error",
+    "element-permitted-order": "error",
+    "element-permitted-parent": "error",
+    "element-required-content": "error",
+    "input-missing-label": "error",
+    "no-deprecated-attr": "error",
+    "no-missing-alt": "error",
+    "no-redundant-aria-label": "error",
+    "no-redundant-for": "error",
+    "no-redundant-role": "error",
+    "prefer-native-element": "error",
+    "require-csp-nonce": "off",
+    "valid-id": "error",
+    "aria-hidden-body": "error",
+    "aria-label-misuse": "error",
+    "empty-heading": "error",
+    "empty-title": "error",
+    "form-dup-name": "error",
+    "hidden-focusable": "error",
+    "long-title": ["error", {
+      "maxlength": 70
+    }],
+    "meta-refresh": "error",
+    "multiple-labeled-controls": "error",
+    "no-autoplay": "error",
+    "no-implicit-button-type": "error",
+    "no-implicit-input-type": "error",
+    "prefer-button": "error",
+    "prefer-tbody": "error",
+    "require-button-type": "error",
+    "text-content": "error",
+    "unrecognized-char-ref": "error",
+    "attribute-allowed-values": "error",
+    "attribute-boolean-style": ["error", {
+      "style": "omit"
+    }],
+    "attribute-empty-style": ["error", {
+      "style": "omit"
+    }],
+    "class-pattern": ["error", {
+      "pattern": "kebabcase"
+    }],
+    "id-pattern": ["error", {
+      "pattern": "kebabcase"
+    }],
+    "no-abstract-role": "error",
+    "no-conditional-comment": "error",
+    "no-deprecated": "error",
+    "no-implicit-close": "error",
+    "no-redundant-attr": "error",
+    "no-style-tag": "off",
+    "no-unknown-elements": "error",
+    "no-utf8-bom": "error",
+    "script-type": ["error", {
+      "include": ["module"]
+    }],
+    "svg-focusable": "error",
+    "tel-non-breaking": "error"
+  }
+}
