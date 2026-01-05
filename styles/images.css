@@ -1,0 +1,515 @@
+/**
+ * Image Styles - Responsive Images and Lazy Loading
+ * Nigerian Church Landing Page
+ * 
+ * Comprehensive image optimization system including:
+ * - Responsive image containers with aspect ratios
+ * - Lazy loading placeholders and transitions
+ * - WebP support detection and fallback handling
+ * - Performance optimizations for image rendering
+ * - Accessibility features for images
+ */
+
+/* ============================================
+   IMAGE CONTAINER SYSTEM
+   ============================================ */
+
+/* Base image container with aspect ratio preservation */
+.image-container {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-gray-100);
+  contain: layout style paint;
+}
+
+/* Aspect ratio containers using modern aspect-ratio property */
+.image-container--16-9 {
+  aspect-ratio: 16 / 9;
+}
+
+.image-container--4-3 {
+  aspect-ratio: 4 / 3;
+}
+
+.image-container--1-1 {
+  aspect-ratio: 1 / 1;
+}
+
+.image-container--21-9 {
+  aspect-ratio: 21 / 9;
+}
+
+.image-container--3-2 {
+  aspect-ratio: 3 / 2;
+}
+
+/* Fallback for browsers without aspect-ratio support */
+@supports not (aspect-ratio: 1) {
+  .image-container--16-9 {
+    padding-block-start: 56.25%;
+  }
+
+  .image-container--4-3 {
+    padding-block-start: 75%;
+  }
+
+  .image-container--1-1 {
+    padding-block-start: 100%;
+  }
+
+  .image-container--21-9 {
+    padding-block-start: 42.857%;
+  }
+
+  .image-container--3-2 {
+    padding-block-start: 66.667%;
+  }
+
+  .image-container img,
+  .image-container picture {
+    position: absolute;
+    inset: 0;
+  }
+}
+
+/* ============================================
+   RESPONSIVE IMAGE STYLES
+   ============================================ */
+
+/* Base responsive image styles */
+.responsive-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Object fit variations */
+.responsive-image--contain {
+  object-fit: contain;
+}
+
+.responsive-image--cover {
+  object-fit: cover;
+}
+
+.responsive-image--fill {
+  object-fit: fill;
+}
+
+.responsive-image--scale-down {
+  object-fit: scale-down;
+}
+
+/* Object position variations */
+.responsive-image--top {
+  object-position: top;
+}
+
+.responsive-image--bottom {
+  object-position: bottom;
+}
+
+.responsive-image--left {
+  object-position: left;
+}
+
+.responsive-image--right {
+  object-position: right;
+}
+
+/* ============================================
+   LAZY LOADING SYSTEM
+   ============================================ */
+
+/* Lazy loading placeholder with blur effect */
+.image-lazy {
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out, filter 0.4s ease-in-out;
+  filter: blur(10px);
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Loaded state */
+.image-lazy.loaded {
+  opacity: 1;
+  filter: blur(0);
+}
+
+/* Loading state with skeleton animation */
+.image-loading {
+  position: relative;
+  background: linear-gradient(
+    90deg,
+    var(--color-gray-100) 0%,
+    var(--color-gray-200) 50%,
+    var(--color-gray-100) 100%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s ease-in-out infinite;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Loading spinner overlay */
+.image-loading::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .image-lazy {
+    transition-duration: 0.01ms;
+    filter: none;
+  }
+
+  .image-loading {
+    animation: none;
+    background: var(--color-gray-100);
+  }
+}
+
+/* ============================================
+   WEBP SUPPORT DETECTION
+   ============================================ */
+
+/* Default styles for all browsers */
+picture {
+  display: contents;
+}
+
+/* WebP support class for JavaScript detection */
+.webp .image-webp-fallback {
+  display: none;
+}
+
+.no-webp .image-webp-source {
+  display: none;
+}
+
+/* Modernizr-style feature detection */
+.webp-supported picture source[type="image/webp"] {
+  display: block;
+}
+
+.no-webp-support picture source[type="image/webp"] {
+  display: none;
+}
+
+/* ============================================
+   PERFORMANCE OPTIMIZATIONS
+   ============================================ */
+
+/* GPU acceleration for smooth transitions */
+.image-optimized {
+  will-change: opacity, transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Remove will-change after animation completes */
+.image-optimized.loaded {
+  will-change: auto;
+}
+
+/* CSS containment for better rendering performance */
+.image-wrapper {
+  contain: layout style paint;
+  content-visibility: auto;
+  contain-intrinsic-size: 0 400px;
+}
+
+/* Optimize image rendering */
+img {
+  image-rendering: auto;
+  image-rendering: crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* High quality rendering for hero images */
+.hero-image img,
+.featured-image img {
+  image-rendering: auto;
+  image-rendering: high-quality;
+}
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================ */
+
+/* Mobile-first responsive image sizing */
+@media (width >= 640px) {
+  .image-wrapper {
+    contain-intrinsic-size: 0 500px;
+  }
+}
+
+@media (width >= 768px) {
+  .image-wrapper {
+    contain-intrinsic-size: 0 600px;
+  }
+}
+
+@media (width >= 1024px) {
+  .image-wrapper {
+    contain-intrinsic-size: 0 700px;
+  }
+}
+
+@media (width >= 1280px) {
+  .image-wrapper {
+    contain-intrinsic-size: 0 800px;
+  }
+}
+
+/* ============================================
+   IMAGE EFFECTS AND OVERLAYS
+   ============================================ */
+
+/* Gradient overlay for text readability */
+.image-overlay {
+  position: relative;
+}
+
+.image-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.3) 50%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  pointer-events: none;
+}
+
+/* Hover zoom effect */
+.image-zoom {
+  overflow: hidden;
+}
+
+.image-zoom img {
+  transition: transform 0.4s ease-out;
+}
+
+.image-zoom:hover img {
+  transform: scale(1.05);
+}
+
+/* Grayscale to color on hover */
+.image-grayscale img {
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.image-grayscale:hover img {
+  filter: grayscale(0%);
+}
+
+/* ============================================
+   HERO IMAGE SPECIFIC STYLES
+   ============================================ */
+
+.hero-image {
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+  overflow: hidden;
+}
+
+.hero-image picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Hero image responsive heights */
+@media (width >= 640px) {
+  .hero-image {
+    min-height: 500px;
+  }
+}
+
+@media (width >= 768px) {
+  .hero-image {
+    min-height: 600px;
+  }
+}
+
+@media (width >= 1024px) {
+  .hero-image {
+    min-height: 700px;
+  }
+}
+
+/* ============================================
+   ABOUT SECTION IMAGE STYLES
+   ============================================ */
+
+.about-image {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.about-image picture {
+  display: block;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============================================
+   ACCESSIBILITY FEATURES
+   ============================================ */
+
+/* Ensure images don't break layout */
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+/* Hide decorative images from screen readers */
+img[alt=""],
+img[role="presentation"] {
+  opacity: 1;
+}
+
+/* Focus styles for linked images */
+a:focus img {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .image-overlay::after {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.5) 50%,
+      rgba(0, 0, 0, 0.9) 100%
+    );
+  }
+
+  img {
+    opacity: 0.95;
+  }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+  .image-lazy,
+  .image-loading {
+    opacity: 1;
+    filter: none;
+    animation: none;
+  }
+
+  .image-overlay::after {
+    display: none;
+  }
+
+  img {
+    max-width: 100%;
+    page-break-inside: avoid;
+  }
+
+  .hero-image {
+    min-height: auto;
+    max-height: 400px;
+  }
+}
+
+/* ============================================
+   DARK MODE SUPPORT
+   ============================================ */
+
+@media (prefers-color-scheme: dark) {
+  .image-container {
+    background-color: var(--color-gray-800);
+  }
+
+  .image-loading {
+    background: linear-gradient(
+      90deg,
+      var(--color-gray-800) 0%,
+      var(--color-gray-700) 50%,
+      var(--color-gray-800) 100%
+    );
+  }
+
+  .image-loading::after {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+/* Rounded corners */
+.image-rounded {
+  border-radius: var(--radius-md);
+}
+
+.image-rounded-lg {
+  border-radius: var(--radius-lg);
+}
+
+.image-rounded-full {
+  border-radius: var(--radius-full);
+}
+
+/* Shadow variations */
+.image-shadow {
+  box-shadow: var(--shadow-md);
+}
+
+.image-shadow-lg {
+  box-shadow: var(--shadow-lg);
+}
+
+.image-shadow-xl {
+  box-shadow: var(--shadow-xl);
+}
+
+/* Border styles */
+.image-border {
+  border: 1px solid var(--color-border-light);
+}
+
+.image-border-thick {
+  border: 2px solid var(--color-border);
+}
