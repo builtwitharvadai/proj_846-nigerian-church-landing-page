@@ -7,7 +7,10 @@
   "scripts": {
     "validate": "html-validate index.html",
     "lint": "htmlhint index.html",
-    "test": "npm run validate && npm run lint",
+    "lint:css": "stylelint 'styles/**/*.css'",
+    "validate:css": "css-validator styles/main.css",
+    "optimize:css": "cleancss -o styles/main.min.css styles/main.css",
+    "test": "npm run validate && npm run lint && npm run lint:css",
     "start": "python -m http.server 8000",
     "serve": "python -m http.server 8000"
   },
@@ -22,7 +25,12 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "clean-css-cli": "^5.6.3",
+    "css-validator": "^3.0.0",
     "html-validate": "^8.0.0",
-    "htmlhint": "^1.1.4"
+    "htmlhint": "^1.1.4",
+    "stylelint": "^16.1.0",
+    "stylelint-config-standard": "^36.0.0",
+    "stylelint-order": "^6.0.4"
   }
 }

@@ -26,6 +26,9 @@
   <meta name="theme-color" content="#1a472a" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0d2415" media="(prefers-color-scheme: dark)">
   
+  <link rel="preload" href="styles/main.css" as="style">
+  <link rel="stylesheet" href="styles/main.css">
+  
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -75,21 +78,21 @@
 <body>
   <a href="#main" class="skip-link">Skip to main content</a>
   
-  <header role="banner">
-    <div class="header-container">
+  <header role="banner" class="header">
+    <div class="header-container container">
       <div class="logo">
         <img src="/images/church-logo.png" alt="Our Church Community Logo" width="80" height="80">
         <span class="church-name">Our Church Community</span>
       </div>
       
-      <nav role="navigation" aria-label="Main navigation">
-        <ul role="list">
-          <li><a href="#home" aria-current="page">Home</a></li>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#ministries">Ministries</a></li>
-          <li><a href="#events">Events</a></li>
-          <li><a href="#contact">Contact</a></li>
+      <nav role="navigation" aria-label="Main navigation" class="nav">
+        <ul role="list" class="nav-list">
+          <li class="nav-item"><a href="#home" class="nav-link" aria-current="page">Home</a></li>
+          <li class="nav-item"><a href="#about" class="nav-link">About Us</a></li>
+          <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="#ministries" class="nav-link">Ministries</a></li>
+          <li class="nav-item"><a href="#events" class="nav-link">Events</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
       </nav>
       
@@ -100,9 +103,9 @@
   </header>
   
   <main id="main" role="main">
-    <section id="home" class="hero-section" aria-labelledby="hero-title">
-      <div class="hero-content">
-        <h1 id="hero-title">Welcome to Our Church Community</h1>
+    <section id="home" class="hero-section section" aria-labelledby="hero-title">
+      <div class="hero-content container">
+        <h1 id="hero-title" class="hero-title">Welcome to Our Church Community</h1>
         <p class="hero-subtitle">A Place of Worship, Fellowship, and Spiritual Growth</p>
         <p class="hero-description">Join us as we gather to worship God, grow in faith, and serve our community with love and compassion.</p>
         
@@ -128,53 +131,53 @@
       </div>
     </section>
     
-    <section id="about" class="about-section" aria-labelledby="about-title">
-      <div class="section-container">
+    <section id="about" class="about-section section" aria-labelledby="about-title">
+      <div class="section-container container">
         <header class="section-header">
-          <h2 id="about-title">About Our Church</h2>
+          <h2 id="about-title" class="section-title">About Our Church</h2>
           <p class="section-subtitle">Our Mission, Vision, and History</p>
         </header>
         
         <article class="about-content">
-          <div class="about-mission">
-            <h3>Our Mission</h3>
-            <p>To spread the Gospel of Jesus Christ, nurture believers in their faith journey, and serve our community with the love of God. We are committed to creating a welcoming environment where everyone can experience God's presence and grow spiritually.</p>
+          <div class="about-mission card">
+            <h3 class="card-title">Our Mission</h3>
+            <p class="card-text">To spread the Gospel of Jesus Christ, nurture believers in their faith journey, and serve our community with the love of God. We are committed to creating a welcoming environment where everyone can experience God's presence and grow spiritually.</p>
           </div>
           
-          <div class="about-vision">
-            <h3>Our Vision</h3>
-            <p>To be a beacon of hope and transformation in Nigeria, raising disciples who impact their communities and nations for Christ. We envision a church that reflects the diversity and unity of God's kingdom.</p>
+          <div class="about-vision card">
+            <h3 class="card-title">Our Vision</h3>
+            <p class="card-text">To be a beacon of hope and transformation in Nigeria, raising disciples who impact their communities and nations for Christ. We envision a church that reflects the diversity and unity of God's kingdom.</p>
           </div>
           
-          <div class="about-denomination">
-            <h3>Our Denomination</h3>
-            <p>We are a Spirit-filled, Bible-believing church affiliated with the Pentecostal Fellowship of Nigeria. Our worship style combines traditional Nigerian Christian heritage with contemporary expressions of faith.</p>
+          <div class="about-denomination card">
+            <h3 class="card-title">Our Denomination</h3>
+            <p class="card-text">We are a Spirit-filled, Bible-believing church affiliated with the Pentecostal Fellowship of Nigeria. Our worship style combines traditional Nigerian Christian heritage with contemporary expressions of faith.</p>
           </div>
           
-          <div class="about-history">
-            <h3>Our History</h3>
-            <p>Founded in 1985, Our Church Community began as a small prayer group of 15 believers meeting in a living room. Through God's grace and faithful service, we have grown into a vibrant congregation of over 2,000 members. Our journey has been marked by divine provision, community impact, and countless testimonies of transformed lives.</p>
+          <div class="about-history card">
+            <h3 class="card-title">Our History</h3>
+            <p class="card-text">Founded in 1985, Our Church Community began as a small prayer group of 15 believers meeting in a living room. Through God's grace and faithful service, we have grown into a vibrant congregation of over 2,000 members. Our journey has been marked by divine provision, community impact, and countless testimonies of transformed lives.</p>
             
             <details class="history-timeline">
               <summary>View Our Timeline</summary>
               <ul role="list" class="timeline-list">
-                <li>
+                <li class="timeline-item">
                   <time datetime="1985">1985</time>
                   <span>Church founded with 15 members</span>
                 </li>
-                <li>
+                <li class="timeline-item">
                   <time datetime="1990">1990</time>
                   <span>First church building dedicated</span>
                 </li>
-                <li>
+                <li class="timeline-item">
                   <time datetime="2000">2000</time>
                   <span>Expanded to multiple services</span>
                 </li>
-                <li>
+                <li class="timeline-item">
                   <time datetime="2010">2010</time>
                   <span>Launched community outreach programs</span>
                 </li>
-                <li>
+                <li class="timeline-item">
                   <time datetime="2020">2020</time>
                   <span>Established online ministry platform</span>
                 </li>
@@ -182,9 +185,9 @@
             </details>
           </div>
           
-          <div class="about-leadership">
-            <h3>Our Leadership</h3>
-            <p>Our church is led by Pastor John Adeyemi and his wife, Pastor Grace Adeyemi, along with a dedicated team of elders, deacons, and ministry leaders who serve with integrity and passion.</p>
+          <div class="about-leadership card">
+            <h3 class="card-title">Our Leadership</h3>
+            <p class="card-text">Our church is led by Pastor John Adeyemi and his wife, Pastor Grace Adeyemi, along with a dedicated team of elders, deacons, and ministry leaders who serve with integrity and passion.</p>
           </div>
         </article>
         
@@ -194,21 +197,21 @@
       </div>
     </section>
     
-    <section id="services" class="services-section" aria-labelledby="services-title">
-      <div class="section-container">
+    <section id="services" class="services-section section" aria-labelledby="services-title">
+      <div class="section-container container">
         <header class="section-header">
-          <h2 id="services-title">Our Services</h2>
+          <h2 id="services-title" class="section-title">Our Services</h2>
           <p class="section-subtitle">Join Us for Worship and Fellowship</p>
         </header>
         
-        <div class="services-grid">
-          <article class="service-card">
-            <h3>Sunday Worship Service</h3>
+        <div class="services-grid grid">
+          <article class="service-card card">
+            <h3 class="card-title">Sunday Worship Service</h3>
             <div class="service-details">
               <p class="service-time">
                 <time datetime="08:00">8:00 AM</time> - <time datetime="13:00">1:00 PM</time>
               </p>
-              <p class="service-description">Our main worship service featuring powerful praise and worship, inspiring messages from God's Word, and opportunities for prayer and ministry.</p>
+              <p class="service-description card-text">Our main worship service featuring powerful praise and worship, inspiring messages from God's Word, and opportunities for prayer and ministry.</p>
               <ul role="list" class="service-features">
                 <li>Contemporary worship music</li>
                 <li>Biblical teaching and preaching</li>
@@ -218,13 +221,13 @@
             </div>
           </article>
           
-          <article class="service-card">
-            <h3>Midweek Bible Study</h3>
+          <article class="service-card card">
+            <h3 class="card-title">Midweek Bible Study</h3>
             <div class="service-details">
               <p class="service-time">
                 Wednesday, <time datetime="18:00">6:00 PM</time> - <time datetime="20:00">8:00 PM</time>
               </p>
-              <p class="service-description">Deep dive into God's Word with interactive Bible study, prayer, and fellowship. A time to grow in knowledge and understanding of Scripture.</p>
+              <p class="service-description card-text">Deep dive into God's Word with interactive Bible study, prayer, and fellowship. A time to grow in knowledge and understanding of Scripture.</p>
               <ul role="list" class="service-features">
                 <li>In-depth Bible teaching</li>
                 <li>Small group discussions</li>
@@ -234,13 +237,13 @@
             </div>
           </article>
           
-          <article class="service-card">
-            <h3>Friday Night Prayer</h3>
+          <article class="service-card card">
+            <h3 class="card-title">Friday Night Prayer</h3>
             <div class="service-details">
               <p class="service-time">
                 Friday, <time datetime="20:00">8:00 PM</time> - <time datetime="22:00">10:00 PM</time>
               </p>
-              <p class="service-description">Powerful prayer meeting where we seek God's face, intercede for our nation, and experience breakthrough in our lives.</p>
+              <p class="service-description card-text">Powerful prayer meeting where we seek God's face, intercede for our nation, and experience breakthrough in our lives.</p>
               <ul role="list" class="service-features">
                 <li>Corporate prayer</li>
                 <li>Worship and praise</li>
@@ -250,13 +253,13 @@
             </div>
           </article>
           
-          <article class="service-card">
-            <h3>Youth Service</h3>
+          <article class="service-card card">
+            <h3 class="card-title">Youth Service</h3>
             <div class="service-details">
               <p class="service-time">
                 Saturday, <time datetime="16:00">4:00 PM</time> - <time datetime="18:00">6:00 PM</time>
               </p>
-              <p class="service-description">Dynamic service designed for young people to encounter God, build friendships, and discover their purpose.</p>
+              <p class="service-description card-text">Dynamic service designed for young people to encounter God, build friendships, and discover their purpose.</p>
               <ul role="list" class="service-features">
                 <li>Contemporary worship</li>
                 <li>Relevant teaching</li>
@@ -269,93 +272,93 @@
       </div>
     </section>
     
-    <section id="ministries" class="ministries-section" aria-labelledby="ministries-title">
-      <div class="section-container">
+    <section id="ministries" class="ministries-section section" aria-labelledby="ministries-title">
+      <div class="section-container container">
         <header class="section-header">
-          <h2 id="ministries-title">Our Ministries</h2>
+          <h2 id="ministries-title" class="section-title">Our Ministries</h2>
           <p class="section-subtitle">Get Involved and Serve</p>
         </header>
         
-        <div class="ministries-grid">
-          <article class="ministry-card">
+        <div class="ministries-grid grid">
+          <article class="ministry-card card">
             <div class="ministry-icon" aria-hidden="true">👨‍👩‍👧‍👦</div>
-            <h3>Children's Ministry</h3>
-            <p>Nurturing the next generation with age-appropriate Bible teaching, fun activities, and character development.</p>
+            <h3 class="card-title">Children's Ministry</h3>
+            <p class="card-text">Nurturing the next generation with age-appropriate Bible teaching, fun activities, and character development.</p>
           </article>
           
-          <article class="ministry-card">
+          <article class="ministry-card card">
             <div class="ministry-icon" aria-hidden="true">🎵</div>
-            <h3>Worship Ministry</h3>
-            <p>Leading the congregation in spirit-filled worship through music, dance, and creative arts.</p>
+            <h3 class="card-title">Worship Ministry</h3>
+            <p class="card-text">Leading the congregation in spirit-filled worship through music, dance, and creative arts.</p>
           </article>
           
-          <article class="ministry-card">
+          <article class="ministry-card card">
             <div class="ministry-icon" aria-hidden="true">🤝</div>
-            <h3>Outreach Ministry</h3>
-            <p>Serving our community through evangelism, charity work, and social impact programs.</p>
+            <h3 class="card-title">Outreach Ministry</h3>
+            <p class="card-text">Serving our community through evangelism, charity work, and social impact programs.</p>
           </article>
           
-          <article class="ministry-card">
+          <article class="ministry-card card">
             <div class="ministry-icon" aria-hidden="true">💑</div>
-            <h3>Marriage Ministry</h3>
-            <p>Supporting couples with pre-marital counseling, marriage enrichment, and family life education.</p>
+            <h3 class="card-title">Marriage Ministry</h3>
+            <p class="card-text">Supporting couples with pre-marital counseling, marriage enrichment, and family life education.</p>
           </article>
           
-          <article class="ministry-card">
+          <article class="ministry-card card">
             <div class="ministry-icon" aria-hidden="true">📖</div>
-            <h3>Media Ministry</h3>
-            <p>Broadcasting services online, managing social media, and producing inspirational content.</p>
+            <h3 class="card-title">Media Ministry</h3>
+            <p class="card-text">Broadcasting services online, managing social media, and producing inspirational content.</p>
           </article>
           
-          <article class="ministry-card">
+          <article class="ministry-card card">
             <div class="ministry-icon" aria-hidden="true">🙏</div>
-            <h3>Prayer Ministry</h3>
-            <p>Interceding for the church, nation, and individual needs through organized prayer initiatives.</p>
+            <h3 class="card-title">Prayer Ministry</h3>
+            <p class="card-text">Interceding for the church, nation, and individual needs through organized prayer initiatives.</p>
           </article>
         </div>
       </div>
     </section>
     
-    <section id="events" class="events-section" aria-labelledby="events-title">
-      <div class="section-container">
+    <section id="events" class="events-section section" aria-labelledby="events-title">
+      <div class="section-container container">
         <header class="section-header">
-          <h2 id="events-title">Upcoming Events</h2>
+          <h2 id="events-title" class="section-title">Upcoming Events</h2>
           <p class="section-subtitle">Join Us for Special Programs</p>
         </header>
         
         <div class="events-list">
-          <article class="event-card">
+          <article class="event-card card">
             <time datetime="2024-02-15" class="event-date">
               <span class="event-day">15</span>
               <span class="event-month">Feb</span>
             </time>
             <div class="event-details">
-              <h3>Annual Thanksgiving Service</h3>
-              <p class="event-description">Join us for a special service of thanksgiving and celebration of God's faithfulness.</p>
+              <h3 class="card-title">Annual Thanksgiving Service</h3>
+              <p class="event-description card-text">Join us for a special service of thanksgiving and celebration of God's faithfulness.</p>
               <p class="event-time">Sunday, 8:00 AM</p>
             </div>
           </article>
           
-          <article class="event-card">
+          <article class="event-card card">
             <time datetime="2024-03-01" class="event-date">
               <span class="event-day">01</span>
               <span class="event-month">Mar</span>
             </time>
             <div class="event-details">
-              <h3>Youth Conference 2024</h3>
-              <p class="event-description">Three-day conference for young people featuring inspiring speakers and worship.</p>
+              <h3 class="card-title">Youth Conference 2024</h3>
+              <p class="event-description card-text">Three-day conference for young people featuring inspiring speakers and worship.</p>
               <p class="event-time">Friday - Sunday</p>
             </div>
           </article>
           
-          <article class="event-card">
+          <article class="event-card card">
             <time datetime="2024-03-20" class="event-date">
               <span class="event-day">20</span>
               <span class="event-month">Mar</span>
             </time>
             <div class="event-details">
-              <h3>Marriage Seminar</h3>
-              <p class="event-description">Building strong marriages through biblical principles and practical wisdom.</p>
+              <h3 class="card-title">Marriage Seminar</h3>
+              <p class="event-description card-text">Building strong marriages through biblical principles and practical wisdom.</p>
               <p class="event-time">Saturday, 10:00 AM - 4:00 PM</p>
             </div>
           </article>
@@ -363,17 +366,17 @@
       </div>
     </section>
     
-    <section id="contact" class="contact-section" aria-labelledby="contact-title">
-      <div class="section-container">
+    <section id="contact" class="contact-section section" aria-labelledby="contact-title">
+      <div class="section-container container">
         <header class="section-header">
-          <h2 id="contact-title">Contact Us</h2>
+          <h2 id="contact-title" class="section-title">Contact Us</h2>
           <p class="section-subtitle">We'd Love to Hear from You</p>
         </header>
         
         <div class="contact-content">
           <div class="contact-info">
-            <article class="contact-item">
-              <h3>Location</h3>
+            <article class="contact-item card">
+              <h3 class="card-title">Location</h3>
               <address>
                 123 Church Street<br>
                 Lagos, Lagos State<br>
@@ -381,27 +384,27 @@
               </address>
             </article>
             
-            <article class="contact-item">
-              <h3>Phone</h3>
+            <article class="contact-item card">
+              <h3 class="card-title">Phone</h3>
               <p><a href="tel:+234XXXXXXXXXX">+234-XXX-XXX-XXXX</a></p>
               <p><a href="tel:+234XXXXXXXXXX">+234-XXX-XXX-XXXX</a> (WhatsApp)</p>
             </article>
             
-            <article class="contact-item">
-              <h3>Email</h3>
+            <article class="contact-item card">
+              <h3 class="card-title">Email</h3>
               <p><a href="mailto:info@ourchurch.ng">info@ourchurch.ng</a></p>
               <p><a href="mailto:pastor@ourchurch.ng">pastor@ourchurch.ng</a></p>
             </article>
             
-            <article class="contact-item">
-              <h3>Office Hours</h3>
+            <article class="contact-item card">
+              <h3 class="card-title">Office Hours</h3>
               <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
               <p>Saturday: 10:00 AM - 2:00 PM</p>
               <p>Sunday: Closed (Service Days)</p>
             </article>
             
-            <article class="contact-item">
-              <h3>Follow Us</h3>
+            <article class="contact-item card">
+              <h3 class="card-title">Follow Us</h3>
               <ul role="list" class="social-links">
                 <li><a href="https://www.facebook.com/ourchurch" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page">Facebook</a></li>
                 <li><a href="https://www.instagram.com/ourchurch" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram profile">Instagram</a></li>
@@ -564,8 +567,8 @@
     </section>
   </main>
   
-  <footer role="contentinfo">
-    <div class="footer-container">
+  <footer role="contentinfo" class="footer">
+    <div class="footer-container container">
       <div class="footer-content">
         <div class="footer-section">
           <h3>Our Church Community</h3>
