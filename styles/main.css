@@ -119,6 +119,9 @@ h6 {
 /* 4. Component Styles - UI components and patterns */
 @import url('components.css');
 
+/* 5. Image Styles - Responsive images and lazy loading */
+@import url('images.css');
+
 /* ============================================
    CRITICAL ABOVE-THE-FOLD STYLES
    Inline these styles for optimal First Contentful Paint
@@ -175,6 +178,107 @@ h6 {
 }
 
 /* ============================================
+   CHURCH CONTENT SPECIFIC STYLES
+   ============================================ */
+
+/* Church information section */
+.church-info {
+  padding-block: var(--space-16);
+}
+
+.church-info__header {
+  margin-block-end: var(--space-8);
+  text-align: center;
+}
+
+.church-info__content {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.church-info__mission {
+  padding: var(--space-6);
+  background-color: var(--color-gray-50);
+  border-radius: var(--radius-lg);
+  border-inline-start: 4px solid var(--color-primary-600);
+}
+
+.church-info__history {
+  line-height: 1.7;
+}
+
+/* Service schedule section */
+.services-schedule {
+  padding-block: var(--space-16);
+  background-color: var(--color-gray-50);
+}
+
+.services-schedule__header {
+  margin-block-end: var(--space-8);
+  text-align: center;
+}
+
+.services-schedule__grid {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.service-card {
+  padding: var(--space-6);
+  background-color: var(--color-background);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.service-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.service-card__title {
+  margin-block-end: var(--space-3);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary-600);
+}
+
+.service-card__time {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-block-end: var(--space-2);
+  font-weight: var(--font-weight-semibold);
+}
+
+.service-card__description {
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+/* About section with image */
+.about-section {
+  padding-block: var(--space-16);
+}
+
+.about-section__content {
+  display: grid;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+.about-section__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.about-section__text p {
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+}
+
+/* ============================================
    PERFORMANCE OPTIMIZATIONS
    ============================================ */
 
@@ -224,6 +328,10 @@ h6 {
   .section {
     padding-block: var(--space-16);
   }
+
+  .services-schedule__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 /* Medium Devices (768px and up) - Tablets landscape */
@@ -247,6 +355,11 @@ h6 {
   .grid-cols-md-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+
+  .about-section__content {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-12);
+  }
 }
 
 /* Large Devices (1024px and up) - Desktops */
@@ -266,6 +379,15 @@ h6 {
 
   .grid-cols-lg-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .services-schedule__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .church-info__content {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-12);
   }
 }
 
