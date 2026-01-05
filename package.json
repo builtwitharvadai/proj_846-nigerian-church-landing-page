@@ -1,0 +1,28 @@
+{
+  "name": "nigerian-church-landing-page",
+  "version": "1.0.0",
+  "description": "A semantic HTML5 landing page for a Nigerian church with accessibility features and mobile-first responsive design",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "validate": "html-validate index.html",
+    "lint": "htmlhint index.html",
+    "test": "npm run validate && npm run lint",
+    "start": "python -m http.server 8000",
+    "serve": "python -m http.server 8000"
+  },
+  "keywords": [
+    "church",
+    "landing-page",
+    "html5",
+    "semantic-html",
+    "accessibility",
+    "nigerian-church"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "html-validate": "^8.0.0",
+    "htmlhint": "^1.1.4"
+  }
+}
