@@ -122,6 +122,9 @@ h6 {
 /* 5. Image Styles - Responsive images and lazy loading */
 @import url('images.css');
 
+/* 6. Accessibility Styles - WCAG 2.1 Level AA compliance */
+@import url('accessibility.css');
+
 /* ============================================
    CRITICAL ABOVE-THE-FOLD STYLES
    Inline these styles for optimal First Contentful Paint
@@ -306,6 +309,33 @@ h6 {
   will-change: transform, opacity;
   transform: translateZ(0);
   backface-visibility: hidden;
+}
+
+/* Performance optimization for hover effects */
+.service-card,
+.ministry-card,
+.event-card {
+  will-change: transform, box-shadow;
+}
+
+/* Remove will-change after animation completes */
+.service-card:not(:hover),
+.ministry-card:not(:hover),
+.event-card:not(:hover) {
+  will-change: auto;
+}
+
+/* Optimize animations for performance */
+@media (prefers-reduced-motion: no-preference) {
+  .fade-in,
+  .slide-up {
+    will-change: opacity, transform;
+  }
+  
+  .fade-in:not(.animating),
+  .slide-up:not(.animating) {
+    will-change: auto;
+  }
 }
 
 /* ============================================

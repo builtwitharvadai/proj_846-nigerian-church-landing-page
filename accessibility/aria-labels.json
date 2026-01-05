@@ -1,0 +1,426 @@
+{
+  "version": "1.0.0",
+  "description": "ARIA labels and accessibility text configuration for Living Faith Christian Center landing page",
+  "lastUpdated": "2024-01-05",
+  "sections": {
+    "header": {
+      "logo": {
+        "alt": "Living Faith Christian Center Logo",
+        "ariaLabel": "Living Faith Christian Center home page"
+      },
+      "navigation": {
+        "ariaLabel": "Main navigation",
+        "mobileMenuToggle": {
+          "ariaLabel": "Toggle mobile menu",
+          "ariaExpanded": "false",
+          "ariaControls": "mobile-menu"
+        },
+        "skipLink": {
+          "text": "Skip to main content",
+          "ariaLabel": "Skip to main content"
+        }
+      }
+    },
+    "hero": {
+      "section": {
+        "ariaLabelledBy": "hero-title"
+      },
+      "title": {
+        "id": "hero-title",
+        "text": "Welcome to Living Faith Christian Center"
+      },
+      "image": {
+        "alt": "Diverse congregation worshipping together in modern Nigerian church with raised hands",
+        "ariaHidden": "false"
+      },
+      "buttons": {
+        "serviceTimes": {
+          "text": "Service Times",
+          "ariaLabel": "View our service times and schedule"
+        },
+        "visitUs": {
+          "text": "Visit Us",
+          "ariaLabel": "Get directions and contact information"
+        }
+      },
+      "highlights": {
+        "sundayService": {
+          "icon": {
+            "ariaHidden": "true"
+          },
+          "text": "Sunday Service: 8:00 AM - 1:00 PM",
+          "ariaLabel": "Sunday worship service from 8:00 AM to 1:00 PM"
+        },
+        "midweekService": {
+          "icon": {
+            "ariaHidden": "true"
+          },
+          "text": "Midweek Service: Wednesday 6:00 PM",
+          "ariaLabel": "Wednesday midweek service at 6:00 PM"
+        }
+      }
+    },
+    "about": {
+      "section": {
+        "ariaLabelledBy": "about-title"
+      },
+      "title": {
+        "id": "about-title",
+        "text": "About Our Church"
+      },
+      "image": {
+        "alt": "Modern church building exterior with cross and welcoming entrance",
+        "ariaHidden": "false"
+      },
+      "timeline": {
+        "summary": {
+          "text": "View Our Timeline",
+          "ariaLabel": "Expand to view church history timeline"
+        },
+        "list": {
+          "role": "list",
+          "ariaLabel": "Church history timeline"
+        }
+      }
+    },
+    "services": {
+      "section": {
+        "ariaLabelledBy": "services-title"
+      },
+      "title": {
+        "id": "services-title",
+        "text": "Our Services"
+      },
+      "cards": {
+        "sundayWorship": {
+          "title": "Sunday Worship Service",
+          "ariaLabel": "Sunday worship service details"
+        },
+        "midweekBibleStudy": {
+          "title": "Midweek Bible Study",
+          "ariaLabel": "Wednesday Bible study details"
+        },
+        "fridayPrayer": {
+          "title": "Friday Night Prayer",
+          "ariaLabel": "Friday night prayer meeting details"
+        },
+        "youthService": {
+          "title": "Youth Service",
+          "ariaLabel": "Saturday youth service details"
+        }
+      }
+    },
+    "ministries": {
+      "section": {
+        "ariaLabelledBy": "ministries-title"
+      },
+      "title": {
+        "id": "ministries-title",
+        "text": "Our Ministries"
+      },
+      "cards": {
+        "childrens": {
+          "icon": {
+            "ariaHidden": "true",
+            "ariaLabel": "Children's ministry icon"
+          },
+          "title": "Children's Ministry",
+          "ariaLabel": "Children's ministry information"
+        },
+        "worship": {
+          "icon": {
+            "ariaHidden": "true",
+            "ariaLabel": "Worship ministry icon"
+          },
+          "title": "Worship Ministry",
+          "ariaLabel": "Worship ministry information"
+        },
+        "outreach": {
+          "icon": {
+            "ariaHidden": "true",
+            "ariaLabel": "Outreach ministry icon"
+          },
+          "title": "Outreach Ministry",
+          "ariaLabel": "Outreach ministry information"
+        },
+        "marriage": {
+          "icon": {
+            "ariaHidden": "true",
+            "ariaLabel": "Marriage ministry icon"
+          },
+          "title": "Marriage Ministry",
+          "ariaLabel": "Marriage ministry information"
+        },
+        "media": {
+          "icon": {
+            "ariaHidden": "true",
+            "ariaLabel": "Media ministry icon"
+          },
+          "title": "Media Ministry",
+          "ariaLabel": "Media ministry information"
+        },
+        "prayer": {
+          "icon": {
+            "ariaHidden": "true",
+            "ariaLabel": "Prayer ministry icon"
+          },
+          "title": "Prayer Ministry",
+          "ariaLabel": "Prayer ministry information"
+        }
+      }
+    },
+    "events": {
+      "section": {
+        "ariaLabelledBy": "events-title"
+      },
+      "title": {
+        "id": "events-title",
+        "text": "Upcoming Events"
+      },
+      "cards": {
+        "thanksgiving": {
+          "ariaLabel": "Annual Thanksgiving Service on February 15th",
+          "dateTime": "2024-02-15"
+        },
+        "youthConference": {
+          "ariaLabel": "Youth Conference 2024 from March 1st to 3rd",
+          "dateTime": "2024-03-01"
+        },
+        "marriageSeminar": {
+          "ariaLabel": "Marriage Seminar on March 20th",
+          "dateTime": "2024-03-20"
+        }
+      }
+    },
+    "contact": {
+      "section": {
+        "ariaLabelledBy": "contact-title"
+      },
+      "title": {
+        "id": "contact-title",
+        "text": "Contact Us"
+      },
+      "form": {
+        "legend": "Send Us a Message",
+        "ariaLabel": "Contact form",
+        "fields": {
+          "name": {
+            "label": "Full Name",
+            "ariaRequired": "true",
+            "ariaInvalid": "false",
+            "ariaDescribedBy": "name-error",
+            "errorId": "name-error",
+            "errorRole": "alert",
+            "errorAriaLive": "polite"
+          },
+          "email": {
+            "label": "Email Address",
+            "ariaRequired": "true",
+            "ariaInvalid": "false",
+            "ariaDescribedBy": "email-error",
+            "errorId": "email-error",
+            "errorRole": "alert",
+            "errorAriaLive": "polite"
+          },
+          "phone": {
+            "label": "Phone Number",
+            "ariaDescribedBy": "phone-hint",
+            "hintId": "phone-hint",
+            "hintText": "Optional - Include country code"
+          },
+          "subject": {
+            "label": "Subject",
+            "ariaRequired": "true",
+            "ariaInvalid": "false",
+            "ariaDescribedBy": "subject-error",
+            "errorId": "subject-error",
+            "errorRole": "alert",
+            "errorAriaLive": "polite"
+          },
+          "message": {
+            "label": "Message",
+            "ariaRequired": "true",
+            "ariaInvalid": "false",
+            "ariaDescribedBy": "message-error message-hint",
+            "errorId": "message-error",
+            "hintId": "message-hint",
+            "hintText": "Minimum 10 characters",
+            "errorRole": "alert",
+            "errorAriaLive": "polite"
+          },
+          "newsletter": {
+            "label": "Subscribe to our newsletter for updates and announcements",
+            "ariaLabel": "Subscribe to newsletter"
+          }
+        },
+        "buttons": {
+          "submit": {
+            "text": "Send Message",
+            "ariaLabel": "Submit contact form",
+            "ariaBusy": "false",
+            "ariaLive": "polite"
+          },
+          "reset": {
+            "text": "Clear Form",
+            "ariaLabel": "Clear all form fields"
+          }
+        },
+        "status": {
+          "role": "status",
+          "ariaLive": "polite",
+          "ariaAtomic": "true"
+        }
+      },
+      "info": {
+        "location": {
+          "title": "Location",
+          "ariaLabel": "Church location and address"
+        },
+        "phone": {
+          "title": "Phone",
+          "ariaLabel": "Contact phone numbers",
+          "mainPhone": {
+            "text": "+234 801 234 5678",
+            "ariaLabel": "Call church office at +234 801 234 5678"
+          },
+          "whatsapp": {
+            "text": "+234 801 234 5678 (WhatsApp)",
+            "ariaLabel": "Message us on WhatsApp at +234 801 234 5678"
+          }
+        },
+        "email": {
+          "title": "Email",
+          "ariaLabel": "Contact email addresses",
+          "general": {
+            "text": "info@livingfaithcc.ng",
+            "ariaLabel": "Email general inquiries to info@livingfaithcc.ng"
+          },
+          "pastor": {
+            "text": "pastor@livingfaithcc.ng",
+            "ariaLabel": "Email pastoral team at pastor@livingfaithcc.ng"
+          }
+        },
+        "hours": {
+          "title": "Office Hours",
+          "ariaLabel": "Church office hours"
+        },
+        "social": {
+          "title": "Follow Us",
+          "ariaLabel": "Social media links",
+          "facebook": {
+            "text": "Facebook",
+            "ariaLabel": "Visit our Facebook page"
+          },
+          "instagram": {
+            "text": "Instagram",
+            "ariaLabel": "Visit our Instagram profile"
+          },
+          "youtube": {
+            "text": "YouTube",
+            "ariaLabel": "Visit our YouTube channel"
+          },
+          "twitter": {
+            "text": "Twitter",
+            "ariaLabel": "Visit our Twitter profile"
+          }
+        }
+      },
+      "map": {
+        "title": "Find Us on the Map",
+        "ariaLabel": "Interactive map showing church location",
+        "link": {
+          "text": "Open in Google Maps",
+          "ariaLabel": "Open church location in Google Maps"
+        }
+      }
+    },
+    "footer": {
+      "role": "contentinfo",
+      "navigation": {
+        "main": {
+          "ariaLabel": "Footer navigation"
+        },
+        "legal": {
+          "ariaLabel": "Legal navigation"
+        }
+      },
+      "links": {
+        "about": {
+          "text": "About Us",
+          "ariaLabel": "Learn more about our church"
+        },
+        "services": {
+          "text": "Services",
+          "ariaLabel": "View our service times"
+        },
+        "ministries": {
+          "text": "Ministries",
+          "ariaLabel": "Explore our ministries"
+        },
+        "events": {
+          "text": "Events",
+          "ariaLabel": "See upcoming events"
+        },
+        "contact": {
+          "text": "Contact",
+          "ariaLabel": "Contact us"
+        },
+        "privacy": {
+          "text": "Privacy Policy",
+          "ariaLabel": "Read our privacy policy"
+        },
+        "terms": {
+          "text": "Terms of Service",
+          "ariaLabel": "Read our terms of service"
+        },
+        "sitemap": {
+          "text": "Sitemap",
+          "ariaLabel": "View site map"
+        }
+      }
+    }
+  },
+  "alerts": {
+    "noscript": {
+      "role": "alert",
+      "text": "For the best experience, please enable JavaScript in your browser. All features will still work without JavaScript, but some interactions may be limited."
+    },
+    "browserWarning": {
+      "role": "alert",
+      "text": "Your browser may not support all features of this website. For the best experience, please update to a modern browser.",
+      "closeButton": {
+        "ariaLabel": "Close warning"
+      }
+    },
+    "formSuccess": {
+      "role": "status",
+      "ariaLive": "polite",
+      "text": "Thank you for your message. We will get back to you soon."
+    },
+    "formError": {
+      "role": "alert",
+      "ariaLive": "assertive",
+      "text": "There was an error submitting your message. Please try again."
+    }
+  },
+  "loading": {
+    "spinner": {
+      "ariaLabel": "Loading",
+      "ariaLive": "polite",
+      "ariaBusy": "true"
+    },
+    "imageLoading": {
+      "ariaLabel": "Image loading",
+      "ariaHidden": "true"
+    }
+  },
+  "screenReaderOnly": {
+    "requiredField": "required field",
+    "externalLink": "opens in new window",
+    "currentPage": "current page",
+    "expandedState": "expanded",
+    "collapsedState": "collapsed",
+    "menuOpen": "menu open",
+    "menuClosed": "menu closed"
+  }
+}
