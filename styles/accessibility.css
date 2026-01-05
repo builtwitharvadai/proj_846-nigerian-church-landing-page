@@ -1,0 +1,482 @@
+/**
+ * Accessibility Styles
+ * Nigerian Church Landing Page - WCAG 2.1 Level AA Compliant
+ * 
+ * Comprehensive accessibility features including:
+ * - Focus indicators for keyboard navigation
+ * - Skip links for screen readers
+ * - Screen reader only content
+ * - High contrast mode support
+ * - Reduced motion support
+ * - Keyboard navigation styling
+ */
+
+/* ============================================
+   FOCUS INDICATORS - WCAG 2.1 Level AA
+   ============================================ */
+
+/* Enhanced focus visible for keyboard navigation */
+:focus-visible {
+  outline: 3px solid var(--color-primary-600);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+  transition: outline-offset 0.15s ease;
+}
+
+/* Remove default focus outline for mouse users */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* High contrast focus for interactive elements */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--color-primary-600);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px rgba(34, 139, 34, 0.15);
+}
+
+/* Focus within for container elements */
+.card:focus-within,
+.service-card:focus-within,
+.ministry-card:focus-within {
+  box-shadow: 0 0 0 3px var(--color-primary-600);
+  transform: translateY(-2px);
+  transition: all 0.2s ease;
+}
+
+/* Navigation focus indicators */
+.nav a:focus-visible,
+.nav button:focus-visible {
+  outline: 3px solid var(--color-primary-600);
+  outline-offset: 4px;
+  background-color: rgba(34, 139, 34, 0.1);
+}
+
+/* Form element focus states */
+input[type="text"]:focus-visible,
+input[type="email"]:focus-visible,
+input[type="tel"]:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--color-primary-600);
+  outline-offset: 2px;
+  border-color: var(--color-primary-600);
+  box-shadow: 0 0 0 4px rgba(34, 139, 34, 0.1);
+}
+
+/* Checkbox and radio focus */
+input[type="checkbox"]:focus-visible,
+input[type="radio"]:focus-visible {
+  outline: 3px solid var(--color-primary-600);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px rgba(34, 139, 34, 0.15);
+}
+
+/* ============================================
+   SKIP LINKS - WCAG 2.1 Level A
+   ============================================ */
+
+/* Skip to main content link */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: var(--space-4);
+  z-index: 9999;
+  padding: var(--space-3) var(--space-6);
+  background-color: var(--color-primary-600);
+  color: var(--color-text-on-primary);
+  font-weight: var(--font-weight-bold);
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: var(--space-4);
+  outline: 3px solid var(--color-background);
+  outline-offset: 2px;
+}
+
+/* Skip navigation link */
+.skip-nav {
+  position: absolute;
+  top: -100px;
+  left: var(--space-4);
+  z-index: 9999;
+  padding: var(--space-2) var(--space-4);
+  background-color: var(--color-gray-900);
+  color: white;
+  font-size: var(--font-size-sm);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  transition: top 0.2s ease;
+}
+
+.skip-nav:focus {
+  top: calc(var(--space-4) + 60px);
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+/* ============================================
+   SCREEN READER ONLY CONTENT
+   ============================================ */
+
+/* Visually hidden but accessible to screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Focusable screen reader only content */
+.sr-only-focusable:focus,
+.sr-only-focusable:active {
+  position: static;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* Screen reader announcements */
+.sr-announcement {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* ============================================
+   KEYBOARD NAVIGATION STYLING
+   ============================================ */
+
+/* Keyboard navigation indicator */
+body.keyboard-nav *:focus {
+  outline: 3px solid var(--color-primary-600);
+  outline-offset: 3px;
+}
+
+/* Enhanced button keyboard navigation */
+button:focus-visible,
+.btn:focus-visible {
+  outline: 3px solid var(--color-primary-600);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px rgba(34, 139, 34, 0.15);
+  transform: scale(1.02);
+}
+
+/* Link keyboard navigation */
+a:focus-visible {
+  outline: 3px solid var(--color-primary-600);
+  outline-offset: 3px;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+/* Card keyboard navigation */
+.card:focus-within,
+.service-card:focus-within,
+.ministry-card:focus-within,
+.event-card:focus-within {
+  outline: 3px solid var(--color-primary-600);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px rgba(34, 139, 34, 0.1), var(--shadow-lg);
+}
+
+/* Mobile menu keyboard navigation */
+.mobile-menu-toggle:focus-visible {
+  outline: 3px solid var(--color-primary-600);
+  outline-offset: 3px;
+  background-color: rgba(34, 139, 34, 0.1);
+}
+
+/* Form validation keyboard focus */
+input:invalid:focus-visible,
+textarea:invalid:focus-visible {
+  outline: 3px solid hsl(0, 70%, 50%);
+  outline-offset: 2px;
+  border-color: hsl(0, 70%, 50%);
+}
+
+input:valid:focus-visible,
+textarea:valid:focus-visible {
+  outline: 3px solid var(--color-primary-600);
+  outline-offset: 2px;
+  border-color: var(--color-primary-600);
+}
+
+/* ============================================
+   HIGH CONTRAST MODE SUPPORT
+   ============================================ */
+
+/* High contrast mode adjustments */
+@media (prefers-contrast: high) {
+  :root {
+    --color-primary-600: hsl(150, 80%, 30%);
+    --color-border: hsl(0, 0%, 40%);
+    --color-text-primary: hsl(0, 0%, 0%);
+    --color-text-secondary: hsl(0, 0%, 20%);
+  }
+
+  /* Increase border visibility */
+  .card,
+  .service-card,
+  .ministry-card,
+  .event-card,
+  input,
+  textarea,
+  select,
+  button {
+    border: 2px solid currentColor;
+  }
+
+  /* Enhance focus indicators */
+  :focus-visible {
+    outline-width: 4px;
+    outline-offset: 4px;
+  }
+
+  /* Increase text contrast */
+  body {
+    color: hsl(0, 0%, 0%);
+  }
+
+  /* Underline all links */
+  a {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+  }
+
+  /* Reduce image opacity for better text contrast */
+  img {
+    opacity: 0.9;
+    filter: contrast(1.1);
+  }
+
+  /* Enhance button visibility */
+  button,
+  .btn {
+    border: 3px solid currentColor;
+    font-weight: var(--font-weight-bold);
+  }
+}
+
+/* ============================================
+   REDUCED MOTION SUPPORT
+   ============================================ */
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Remove parallax effects */
+  .parallax {
+    transform: none !important;
+  }
+
+  /* Disable hover animations */
+  .card:hover,
+  .service-card:hover,
+  .ministry-card:hover {
+    transform: none !important;
+  }
+
+  /* Keep focus indicators visible */
+  :focus-visible {
+    transition: outline-offset 0s !important;
+  }
+}
+
+/* ============================================
+   TOUCH TARGET SIZING - WCAG 2.1 Level AAA
+   ============================================ */
+
+/* Minimum touch target size of 44x44px */
+button,
+.btn,
+a,
+input[type="checkbox"],
+input[type="radio"],
+select {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Ensure adequate spacing between touch targets */
+.nav a,
+.nav button {
+  margin-inline: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+}
+
+/* Mobile touch targets */
+@media (width < 768px) {
+  button,
+  .btn,
+  a {
+    min-height: 48px;
+    padding: var(--space-3) var(--space-5);
+  }
+
+  /* Increase form element touch targets */
+  input,
+  textarea,
+  select {
+    min-height: 48px;
+    padding: var(--space-3);
+  }
+}
+
+/* ============================================
+   COLOR CONTRAST ENHANCEMENTS
+   ============================================ */
+
+/* Ensure text meets WCAG AA contrast ratios */
+.text-on-primary {
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.text-on-secondary {
+  color: hsl(0, 0%, 10%);
+}
+
+/* Link contrast */
+a {
+  color: var(--color-primary-600);
+  text-decoration-color: var(--color-primary-600);
+}
+
+a:hover,
+a:focus {
+  color: var(--color-primary-700);
+  text-decoration-thickness: 2px;
+}
+
+/* Error message contrast */
+.error-message,
+[role="alert"] {
+  color: hsl(0, 70%, 40%);
+  background-color: hsl(0, 70%, 95%);
+  border-left: 4px solid hsl(0, 70%, 50%);
+  padding: var(--space-3);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Success message contrast */
+.success-message {
+  color: hsl(150, 70%, 30%);
+  background-color: hsl(150, 70%, 95%);
+  border-left: 4px solid hsl(150, 70%, 40%);
+  padding: var(--space-3);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* ============================================
+   ARIA LIVE REGIONS
+   ============================================ */
+
+/* Style for live regions */
+[aria-live="polite"],
+[aria-live="assertive"],
+[role="status"],
+[role="alert"] {
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  margin-block: var(--space-4);
+}
+
+[role="alert"] {
+  background-color: hsl(0, 70%, 95%);
+  border: 2px solid hsl(0, 70%, 50%);
+  color: hsl(0, 70%, 30%);
+}
+
+[role="status"] {
+  background-color: hsl(210, 70%, 95%);
+  border: 2px solid hsl(210, 70%, 50%);
+  color: hsl(210, 70%, 30%);
+}
+
+/* ============================================
+   LOADING AND DISABLED STATES
+   ============================================ */
+
+/* Loading state accessibility */
+[aria-busy="true"] {
+  position: relative;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+[aria-busy="true"]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: grid;
+  place-items: center;
+}
+
+/* Disabled state */
+[aria-disabled="true"],
+:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ============================================
+   PRINT ACCESSIBILITY
+   ============================================ */
+
+@media print {
+  /* Ensure focus indicators are visible in print */
+  :focus-visible {
+    outline: 2px solid black !important;
+  }
+
+  /* Show skip links in print */
+  .skip-link {
+    position: static !important;
+    display: block !important;
+  }
+
+  /* Hide decorative elements */
+  [aria-hidden="true"] {
+    display: none !important;
+  }
+
+  /* Ensure sufficient contrast */
+  * {
+    color: black !important;
+    background: white !important;
+  }
+
+  a {
+    text-decoration: underline !important;
+  }
+}
