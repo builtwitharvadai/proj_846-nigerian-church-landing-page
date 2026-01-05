@@ -12,6 +12,10 @@
     "validate:css": "css-validator styles/main.css",
     "optimize:css": "cleancss -o styles/main.min.css styles/main.css",
     "test": "npm run validate && npm run lint && npm run lint:css && npm run lint:js",
+    "test:accessibility": "node scripts/test-accessibility.js",
+    "test:performance": "node scripts/test-performance.js",
+    "build": "node scripts/build.js",
+    "smoke-test": "node scripts/smoke-test.js",
     "start": "python -m http.server 8000",
     "serve": "python -m http.server 8000"
   },
@@ -26,13 +30,20 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "@axe-core/cli": "^4.8.0",
+    "axe-core": "^4.8.0",
     "clean-css-cli": "^5.6.3",
     "css-validator": "^3.0.0",
     "eslint": "^8.57.0",
+    "html-minifier-terser": "^7.2.0",
     "html-validate": "^8.0.0",
     "htmlhint": "^1.1.4",
+    "lighthouse": "^11.4.0",
+    "pa11y": "^7.0.0",
+    "sharp": "^0.33.0",
     "stylelint": "^16.1.0",
     "stylelint-config-standard": "^36.0.0",
-    "stylelint-order": "^6.0.4"
+    "stylelint-order": "^6.0.4",
+    "terser": "^5.26.0"
   }
 }
